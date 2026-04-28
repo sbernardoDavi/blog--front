@@ -5,7 +5,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div style={{ alignItems: "center" }}>
+      <div>
         <ul className="navbar-links">
           <li>
             <a href="/">Home</a>
