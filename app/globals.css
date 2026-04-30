@@ -22,13 +22,40 @@
 body {
   background: linear-gradient(135deg, #dfe9f3, #ffffff);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  transform: none;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure fixed positioning works correctly */
+html {
+  transform: none !important;
+  overflow-x: hidden;
 }
 
 .container {
   border-radius: 20px;
-  padding: 2rem;
   margin: 2rem auto;
+}
+
+.main-content {
+  min-height: 100vh;
+}
+
+@media (min-width: 769px) {
+  .main-content {
+    padding-top: 70px;
+  }
+}
+
+/* Mobile adjustments for sidebar */
+@media (max-width: 768px) {
+  .main-content {
+    padding-left: 0;
+  }
 }

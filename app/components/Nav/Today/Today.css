@@ -1,0 +1,52 @@
+.div-date {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 2.4rem;
+  transition: all 0.3s ease;
+}
+
+.div-date:hover {
+  background: rgba(0, 123, 255, 0.2);
+  border-color: rgba(0, 123, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.date,
+.date-weekday {
+  margin: 0;
+  color: #ffffff;
+}
+
+.date {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.date-weekday {
+  font-size: 1.1rem;
+  color: #cccccc;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .div-date {
+    padding: 0.3rem 0.5rem;
+    min-height: 2rem;
+  }
+
+  .date {
+    font-size: 1rem;
+  }
+
+  .date-weekday {
+    font-size: 0.9rem;
+  }
+}
