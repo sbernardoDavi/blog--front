@@ -1,12 +1,12 @@
 import Image from "next/image";
-import logoLadp from "../../assets/logo-ladp.png";
+import logoLadp1 from "../../assets/logo-ladp1.png";
 import "./Logo.css";
 
 const Logo = () => {
   return (
     <div className="logo-center">
       <div className="logo-box">
-        <Image src={logoLadp} alt="Logo LADP" unoptimized />
+        <Image src={logoLadp1} alt="Logo LADP" unoptimized />
       </div>
     </div>
   );

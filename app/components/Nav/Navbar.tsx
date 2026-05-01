@@ -59,8 +59,10 @@ const Navbar = () => {
               </a>
             </li>
             {/* Today aparece na lista apenas no desktop */}
-            <li className="desktop-only">
-              <Today />
+            <li>
+              <a href="#footer" onClick={closeSidebar}>
+                Contato
+              </a>
             </li>
             <li>
               <a href="/agenda" onClick={closeSidebar}>
