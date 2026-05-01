@@ -15,7 +15,7 @@ export default function Footer() {
 
         <div className="footer-social">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/ladp.unifaa"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -36,7 +36,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://wa.me/"
+            href="https://wa.me/+5591982951416?text=Ol%C3%A1%2C%20estou%20entrando%20em%20contato%20para%20saber%20mais%20sobre%20a%20LADP."
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
