@@ -35,7 +35,7 @@ export default function Sobre() {
   }, [audioDescricao]);
 
   return (
-    <section className="sobre-container">
+    <section className="sobre-container" id="about">
       <div className="sobre-content">
         <h1 className="sobre-title">
           CONHEÇA A <span className="ladp-gradient">LADP</span>

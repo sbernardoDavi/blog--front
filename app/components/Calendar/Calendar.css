@@ -42,7 +42,7 @@
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 4px;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .calendar-cell {
-  height: 95px;
+  height: 100px;
   border-radius: 8px;
   padding: 0.35rem 0.4rem;
   background: #f9fafb;
@@ -66,6 +66,14 @@
   flex-direction: column;
   gap: 2px;
   overflow: hidden;
+}
+
+.calendar-cell--weekend {
+  background: #fafafa;
+}
+
+.calendar-cell--weekend .calendar-day-number {
+  color: #e34a4ab0;
 }
 
 .calendar-cell--empty {
@@ -144,12 +152,12 @@
 .calendar-event--more {
   background: #e0e7ff;
   color: #4f46e5;
-  margin-top: 0.1rem;
+  margin-top: 0.4rem;
 }
 
 @media (max-width: 640px) {
   .calendar {
-    width: 90%;
+    width: 95%;
     padding: 0.9rem;
     box-shadow: none;
     margin-top: 2rem;

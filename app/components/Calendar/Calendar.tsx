@@ -12,7 +12,7 @@ export type CalendarEvent = {
   location?: string;
 };
 
-const WEEKDAYS = ["Seg", "Ter", "Qua", "Qui", "Sex"];
+const WEEKDAYS = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 const MONTHS = [
   "Janeiro",
   "Fevereiro",
@@ -40,13 +40,18 @@ export default function Calendar({ events = [] }: Props) {
 
   function getDaysGrid() {
     const firstDay = new Date(year, month, 1).getDay();
-    const startOffset = firstDay === 0 ? 6 : firstDay - 1;
+    const startOffset = firstDay; // Dom=0, Seg=1 ... Sáb=6
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const cells: (number | null)[] = [];
     for (let i = 0; i < startOffset; i++) cells.push(null);
     for (let d = 1; d <= daysInMonth; d++) cells.push(d);
-    while (cells.length % 5 !== 0) cells.push(null);
+    while (cells.length % 7 !== 0) cells.push(null);
     return cells;
+  }
+
+  function isWeekend(day: number) {
+    const dow = new Date(year, month, day).getDay();
+    return dow === 0 || dow === 6;
   }
 
   function getEventsForDay(day: number) {
@@ -80,7 +85,7 @@ export default function Calendar({ events = [] }: Props) {
     : "";
 
   return (
-    <div className="calendar-wrapper">
+    <div className="calendar-wrapper" id="calendar">
       <div className="calendar">
         <div className="calendar-header">
           <span className="calendar-title">
@@ -112,6 +117,7 @@ export default function Calendar({ events = [] }: Props) {
               className={[
                 "calendar-cell",
                 !day ? "calendar-cell--empty" : "calendar-cell--clickable",
+                day && isWeekend(day) ? "calendar-cell--weekend" : "",
                 day && isToday(day) ? "calendar-cell--today" : "",
                 day && selectedDay === day ? "calendar-cell--selected" : "",
               ].join(" ")}
@@ -129,7 +135,7 @@ export default function Calendar({ events = [] }: Props) {
                     {isMobile ? (
                       getEventsForDay(day).length > 0 && (
                         <span className="calendar-event calendar-event--more">
-                          Eventos
+                          Ver +
                         </span>
                       )
                     ) : (

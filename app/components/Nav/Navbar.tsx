@@ -65,12 +65,12 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="/agenda" onClick={closeSidebar}>
+              <a href="#calendar" onClick={closeSidebar}>
                 Agenda
               </a>
             </li>
             <li>
-              <a href="/sobre" onClick={closeSidebar}>
+              <a href="#about" onClick={closeSidebar}>
                 Sobre Nós
               </a>
             </li>
