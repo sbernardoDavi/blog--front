@@ -34,6 +34,8 @@ export default function Sobre() {
     }
   }, [audioDescricao]);
 
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section className="sobre-container" id="about">
       <div className="sobre-content">
@@ -43,7 +45,15 @@ export default function Sobre() {
 
         <div className="sobre-wrapper">
           <main className="sobre-main">
-            <p>{aboutUsContent}</p>
+            <p className={!expanded ? "sobre-text--clamped" : ""}>
+              {aboutUsContent}
+            </p>
+            <button
+              className="sobre-leia-mais"
+              onClick={() => setExpanded((v) => !v)}
+            >
+              {expanded ? "Leia menos" : "Leia mais"}
+            </button>
           </main>
           <aside className="sobre-card">
             <div className="card-item">

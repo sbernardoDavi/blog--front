@@ -118,7 +118,34 @@
   font-size: 1rem;
 }
 
+.sobre-leia-mais {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .sobre-main {
+    min-height: auto;
+  }
+
+  .sobre-text--clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sobre-leia-mais {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background: none;
+    border: none;
+    color: #4c6ef5;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+  }
+
   .sobre-wrapper {
     flex-direction: column;
   }
