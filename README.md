@@ -1,12 +1,7 @@
 ## Getting Started
 
 This project includes the creation of a website for the law course of the University of Valença (UNIFAA) in Rio de Janeiro.
-
 The website will be built using Next.js, a popular React framework for building server-side rendered applications. The website will include features such as a homepage, course information, and a contact page.
-
-### Next.js Agent Rules
-
-<!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
 
@@ -20,7 +15,6 @@ To get started, clone the repository and install the dependencies:
 
 ```bash
 git clone
-cd unifaa-law-course-website
 npm install
 ```
 
