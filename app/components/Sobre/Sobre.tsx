@@ -69,7 +69,7 @@ export default function Sobre() {
               </label>
             </div>
 
-            <div className="card-item">
+            {/* <div className="card-item">
               <label className="checkbox-container">
                 <input
                   type="checkbox"
@@ -80,7 +80,7 @@ export default function Sobre() {
                 <span className="checkbox-custom"></span>
                 <span className="checkbox-label">Ativar libras</span>
               </label>
-            </div>
+            </div> */}
           </aside>
         </div>
       </div>
