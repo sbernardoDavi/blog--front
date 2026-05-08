@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Navbar from "./components/Nav/Navbar";
 import Logo from "./components/Logo/Logo";
 import Search from "./components/Search/Search";
