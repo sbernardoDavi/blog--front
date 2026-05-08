@@ -7,7 +7,7 @@ export type article = {
   tema: string;
   autor: string;
   resumo: string;
-  url: string;
+  pdf_url: string;
 };
 
 type Props = {
@@ -80,7 +80,7 @@ export default function Articles({ articles }: Props) {
               </div>
               <p className="article-resumo">{article.resumo}</p>
               <a
-                href={article.url}
+                href={article.pdf_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="article-btn"

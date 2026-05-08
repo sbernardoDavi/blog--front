@@ -26,7 +26,6 @@ const Search = () => {
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setErrorMessage(null);
-    console.log("Busca realizada:", query);
   };
 
   const startRecording = async () => {

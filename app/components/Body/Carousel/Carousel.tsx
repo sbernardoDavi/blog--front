@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 import "./Carousel.css";
-
-interface VideoItem {
-  id: string;
-  title: string;
-  description: string;
-  embedUrl: string;
-}
+import { video as VideoItem } from "../Body";
 
 interface CarouselProps {
   videos: VideoItem[];
@@ -16,6 +10,19 @@ interface CarouselProps {
 
 export default function Carousel({ videos }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  function toEmbedUrl(url: string) {
+    try {
+      const u = new URL(url);
+      // https://www.youtube.com/watch?v=ID
+      const id =
+        u.searchParams.get("v") ??
+        // https://youtu.be/ID
+        (u.hostname === "youtu.be" ? u.pathname.slice(1) : null);
+      if (id) return `https://www.youtube.com/embed/${id}`;
+    } catch {}
+    return url; // já é embed ou outro formato
+  }
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
@@ -36,16 +43,16 @@ export default function Carousel({ videos }: CarouselProps) {
           <iframe
             width="100%"
             height="100%"
-            // src={currentVideo.embedUrl}
-            title={currentVideo.title}
+            src={toEmbedUrl(currentVideo.url)}
+            title={currentVideo.titulo}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
         <div className="video-info">
-          <h3>{currentVideo.title}</h3>
-          <p>{currentVideo.description}</p>
+          <h3>{currentVideo.titulo}</h3>
+          <p>{currentVideo.conteudo}</p>
         </div>
       </div>
 
