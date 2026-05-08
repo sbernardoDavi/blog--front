@@ -95,8 +95,7 @@
 }
 
 .footer-dev {
-  margin-top: 20px;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   text-align: center;
   opacity: 0.7;
