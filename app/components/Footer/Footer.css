@@ -1,6 +1,6 @@
 .footer {
-  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-  color: white;
+  background: var(--bg-nav);
+  color: var(--text-nav);
   padding: 40px 20px;
   margin-top: auto;
   width: 100%;
@@ -33,7 +33,7 @@
 
 .footer-subtitle {
   font-size: 1rem;
-  color: #cccccc;
+  color: var(--text-muted);
   margin: 0;
   font-weight: 400;
   letter-spacing: 0.5px;

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Today from "./Today/Today";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -76,15 +77,17 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Desktop: LADP à direita */}
+          {/* Desktop: LADP e toggle à direita */}
           <div className="navbar-brand desktop-only">
+            <ThemeToggle />
             <span className="ladp-gradient">LADP</span>
           </div>
 
-          {/* Mobile: LADP e Today na parte inferior */}
+          {/* Mobile: LADP, Today e toggle na parte inferior */}
           <div className="navbar-bottom mobile-only">
             <div className="navbar-brand">
               <span className="ladp-gradient">LADP</span>
+              <ThemeToggle />
             </div>
             <div className="navbar-today">
               <Today />

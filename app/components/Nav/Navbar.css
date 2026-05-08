@@ -5,7 +5,7 @@
   top: 15px !important;
   left: 15px !important;
   z-index: 1004 !important;
-  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  background: var(--bg-nav);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   color: #ffffff;
@@ -41,8 +41,8 @@
 
 /* Desktop Navbar */
 .navbar {
-  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-  color: white;
+  background: var(--bg-nav);
+  color: var(--text-nav);
   padding: 15px 20px;
   width: 100%;
   position: fixed;
@@ -74,7 +74,7 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: #cccccc;
+  color: var(--text-nav);
   font-weight: 500;
   transition: all 0.3s ease;
   font-size: 1rem;
@@ -180,6 +180,8 @@
     text-align: center;
     width: 100%;
     margin-bottom: 20rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .navbar-today {

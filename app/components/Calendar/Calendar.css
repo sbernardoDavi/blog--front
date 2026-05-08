@@ -5,10 +5,10 @@
 }
 
 .calendar {
-  background: #fff;
+  background: var(--bg-surface);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px var(--shadow);
   width: 80%;
 }
 
@@ -22,16 +22,16 @@
 .calendar-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-primary);
 }
 
 .calendar-select {
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
   font-size: 0.85rem;
-  color: #374151;
-  background: #f9fafb;
+  color: var(--text-secondary);
+  background: var(--bg-surface-alt);
   cursor: pointer;
   outline: none;
 }
@@ -50,18 +50,18 @@
   text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--text-muted);
   padding: 0.4rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .calendar-cell {
-  height: 100px;
+  height: 105px;
   border-radius: 8px;
   padding: 0.35rem 0.4rem;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -69,7 +69,7 @@
 }
 
 .calendar-cell--weekend {
-  background: #fafafa;
+  background: var(--bg-surface-alt);
 }
 
 .calendar-cell--weekend .calendar-day-number {
@@ -94,7 +94,7 @@
 }
 
 .calendar-cell--today {
-  background: #eef2ff;
+  background: var(--bg-surface);
   border-color: #6366f1;
 }
 
@@ -106,7 +106,7 @@
 .calendar-day-number {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--text-secondary);
 }
 
 .calendar-day-row {
