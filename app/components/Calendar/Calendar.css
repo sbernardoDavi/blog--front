@@ -158,7 +158,7 @@
 @media (max-width: 640px) {
   .calendar {
     width: 95%;
-    padding: 0.9rem;
+    padding: 0.5rem;
     box-shadow: none;
     margin-top: 2rem;
     border-radius: 12px;

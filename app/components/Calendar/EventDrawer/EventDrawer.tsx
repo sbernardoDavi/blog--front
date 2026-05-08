@@ -1,7 +1,7 @@
 "use client";
 
 import "./EventDrawer.css";
-import { CalendarEvent } from "../Calendar/Calendar";
+import { CalendarEvent } from "../Calendar";
 
 type Props = {
   date: string;

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import "./Calendar.css";
-import EventDrawer from "../EventDrawer/EventDrawer";
+import EventDrawer from "./EventDrawer/EventDrawer";
 
 export type CalendarEvent = {
   date: string; // "YYYY-MM-DD"
@@ -136,7 +136,7 @@ export default function Calendar({ events = [] }: Props) {
                     {isMobile ? (
                       getEventsForDay(day).length > 0 && (
                         <span className="calendar-event calendar-event--more">
-                          Ver +
+                          Eventos
                         </span>
                       )
                     ) : (
