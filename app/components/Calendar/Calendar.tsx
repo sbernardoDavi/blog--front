@@ -10,6 +10,7 @@ export type CalendarEvent = {
   time?: string;
   description?: string;
   location?: string;
+  speaker?: string;
 };
 
 const WEEKDAYS = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];

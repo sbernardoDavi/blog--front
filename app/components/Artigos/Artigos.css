@@ -1,0 +1,236 @@
+.articles-section {
+  width: 100%;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.articles-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.articles-carousel {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.articles-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  flex: 1;
+  overflow: hidden;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+
+.articles-track--enter-right {
+  animation: slideInRight 0.3s ease forwards;
+}
+.articles-track--enter-left {
+  animation: slideInLeft 0.3s ease forwards;
+}
+.articles-track--exit-left {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+.articles-track--exit-right {
+  animation: slideOutRight 0.3s ease forwards;
+}
+
+.article-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 4px solid #85afdd;
+  height: 25rem;
+}
+
+.article-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.article-tema {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.article-autor {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.article-resumo {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.6;
+  flex: 1;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.article-btn {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  background: #636fa1;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.article-btn:hover {
+  background: #3b5bdb;
+  box-shadow:
+    0 8px 24px rgba(0, 123, 255, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.articles-btn {
+  background: #80a6cf;
+  color: #fff;
+  border: none;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: center;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articles-btn:hover {
+  background: #5a8bb8;
+  transform: scale(1.1);
+}
+
+.articles-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.articles-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #80a6cf;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  padding: 0;
+}
+
+.articles-dot--active {
+  background: #4c6ef5;
+  border-color: #4c6ef5;
+}
+
+.articles-dot:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .articles-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .articles-track {
+    grid-template-columns: 1fr;
+  }
+
+  .articles-title {
+    font-size: 1.5rem;
+  }
+
+  .articles-section {
+    padding: 32px 16px;
+  }
+
+  .articles-controls-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 1rem;
+  }
+  .articles-indicators {
+    margin-top: 0;
+  }
+}

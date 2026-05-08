@@ -30,8 +30,10 @@ export default function EventDrawer({ date, events, onClose, open }: Props) {
           ) : (
             events.map((event, i) => (
               <div key={i} className="ed-card">
-                {event.time && <span className="ed-time">{event.time}</span>}
-                <h3 className="ed-title">{event.title}</h3>
+                <div className="div-title">
+                  <h3 className="ed-title">{event.title}</h3>
+                  {event.time && <span className="ed-time">{event.time}</span>}
+                </div>
 
                 {event.description && (
                   <div className="ed-section">
@@ -44,6 +46,13 @@ export default function EventDrawer({ date, events, onClose, open }: Props) {
                   <div className="ed-section">
                     <span className="ed-section-label">Localização</span>
                     <p className="ed-section-text">{event.location}</p>
+                  </div>
+                )}
+
+                {event.speaker && (
+                  <div className="ed-section">
+                    <span className="ed-section-label">Palestrante</span>
+                    <p className="ed-section-text">{event.speaker}</p>
                   </div>
                 )}
               </div>

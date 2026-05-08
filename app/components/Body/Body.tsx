@@ -1,6 +1,6 @@
 "use client";
 
-import Carousel from "../Carousel/Carousel";
+import Carousel from "./Carousel/Carousel";
 import "./Body.css";
 
 const videoData = [
