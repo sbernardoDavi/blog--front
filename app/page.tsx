@@ -24,8 +24,8 @@ export default async function Home() {
         <Search />
         <Articles articles={artigos} />
         <Calendar events={eventos} />
-        <Sobre />
         <Body videos={videos} />
+        <Sobre />
       </div>
     </main>
   );
