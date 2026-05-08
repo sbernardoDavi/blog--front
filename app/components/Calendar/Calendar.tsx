@@ -87,6 +87,7 @@ export default function Calendar({ events = [] }: Props) {
 
   return (
     <div className="calendar-wrapper" id="calendar">
+      <h1 className="calendar-h1">CONFIRA NOSSA AGENDA</h1>
       <div className="calendar">
         <div className="calendar-header">
           <span className="calendar-title">
@@ -136,7 +137,7 @@ export default function Calendar({ events = [] }: Props) {
                     {isMobile ? (
                       getEventsForDay(day).length > 0 && (
                         <span className="calendar-event calendar-event--more">
-                          Eventos
+                          Ver +
                         </span>
                       )
                     ) : (
