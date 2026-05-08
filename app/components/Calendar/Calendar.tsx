@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRealtime } from "@/lib/useRealtime";
 import "./Calendar.css";
 import EventDrawer from "./EventDrawer/EventDrawer";
 
@@ -34,6 +35,13 @@ type Props = {
 };
 
 export default function Calendar({ events = [] }: Props) {
+  const items = useRealtime<CalendarEvent>({
+    table: "eventos",
+    select: "title, date, time, description, location",
+    orderBy: { column: "date", ascending: true },
+    initialData: events,
+  });
+
   const today = new Date();
   const [year, setYear] = useState(today.getFullYear());
   const [month, setMonth] = useState(today.getMonth());
@@ -57,7 +65,7 @@ export default function Calendar({ events = [] }: Props) {
 
   function getEventsForDay(day: number) {
     const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-    return events.filter((e) => e.date === key);
+    return items.filter((e) => e.date === key);
   }
 
   function handleMonthChange(e: React.ChangeEvent<HTMLSelectElement>) {

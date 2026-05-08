@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRealtime } from "@/lib/useRealtime";
 import "./Artigos.css";
 
 export type article = {
@@ -17,6 +18,13 @@ type Props = {
 const VISIBLE = 3;
 
 export default function Articles({ articles }: Props) {
+  const items = useRealtime<article>({
+    table: "artigos",
+    select: "tema, autor, resumo, pdf_url",
+    orderBy: { column: "created_at", ascending: false },
+    initialData: articles,
+  });
+
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
   const [animating, setAnimating] = useState(false);
@@ -29,7 +37,7 @@ export default function Articles({ articles }: Props) {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  const total = articles.length;
+  const total = items.length;
 
   function navigate(dir: "left" | "right") {
     if (animating) return;
@@ -49,7 +57,7 @@ export default function Articles({ articles }: Props) {
 
   const visible = Array.from(
     { length: isMobile ? 1 : Math.min(VISIBLE, total) },
-    (_, j) => articles[(index + j) % total],
+    (_, j) => items[(index + j) % total],
   );
 
   const step = isMobile ? 1 : VISIBLE;
