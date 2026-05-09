@@ -58,7 +58,13 @@ export default function Footer() {
         </div>
 
         <p className="footer-dev">
-          Desenvolvido por © <a href="https://www.instagram.com/bernardx_davi/" style={{ color: 'red' }}> Davi Bernardo </a> — Santos Engenharia
+          Desenvolvido por ©{" "}
+          <a
+            href="https://www.instagram.com/bernardx_davi/"
+            style={{ color: "red" }}
+          >
+            Davi Bernardo
+          </a>
         </p>
       </div>
     </footer>
