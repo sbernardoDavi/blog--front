@@ -32,7 +32,9 @@ export default function EventDrawer({ date, events, onClose, open }: Props) {
               <div key={i} className="ed-card">
                 <div className="div-title">
                   <h3 className="ed-title">{event.title}</h3>
-                  {event.time && <span className="ed-time">{event.time}</span>}
+                  {event.time && (
+                    <span className="ed-time">{event.time.slice(0, 5)}</span>
+                  )}
                 </div>
 
                 {event.description && (
