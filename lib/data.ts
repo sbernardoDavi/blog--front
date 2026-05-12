@@ -19,7 +19,7 @@ export async function getArtigos(): Promise<article[]> {
 export async function getEventos(): Promise<CalendarEvent[]> {
   const { data, error } = await supabase
     .from("eventos")
-    .select("title, date, time, description, location")
+    .select("title, date, time, description, location, speaker")
     .order("date", { ascending: true });
 
   if (error) {

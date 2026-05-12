@@ -43,7 +43,7 @@ export function useRealtime<T>({
 
           const { data: fresh } = await query;
           if (fresh) setData(fresh as T[]);
-        }
+        },
       )
       .subscribe();
 

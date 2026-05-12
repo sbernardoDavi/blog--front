@@ -37,7 +37,7 @@ type Props = {
 export default function Calendar({ events = [] }: Props) {
   const items = useRealtime<CalendarEvent>({
     table: "eventos",
-    select: "title, date, time, description, location",
+    select: "title, date, time, description, location, speaker",
     orderBy: { column: "date", ascending: true },
     initialData: events,
   });
